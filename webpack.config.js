@@ -16,6 +16,21 @@ module.exports = {
     publicPath: '/',
   },
 
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            '@babel/env'
+          ]
+        }
+      }
+    ]
+  },
+
   watch: true,
 
   plugins: [
@@ -27,7 +42,7 @@ module.exports = {
       host: '0.0.0.0',
       port: 3000,
       historyFallback: true,
-      static: [path.join(__dirname, 'public'), path.join(__dirname, 'build')],
+      static: [path.join(__dirname, 'build'), path.join(__dirname, 'public')],
     }),
   ],
 };
