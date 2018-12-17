@@ -20,7 +20,7 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        exclude: /node_modules|webpack-plugin-serve/,
+        exclude: /node_modules/,
         loader: 'babel-loader',
         options: {
           presets: [
