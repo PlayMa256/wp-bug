@@ -21,28 +21,14 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            '@babel/env'
-          ]
-        }
+        loader: 'babel-loader'
       }
     ]
   },
 
-  watch: true,
-
   plugins: [
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public/index.html'),
-    }),
-
-    new WebpackPluginServe({
-      host: '0.0.0.0',
-      port: 3000,
-      historyFallback: true,
-      static: [path.join(__dirname, 'build'), path.join(__dirname, 'public')],
-    }),
+    })
   ],
 };
